@@ -1,7 +1,8 @@
+// fonction qui dit a une celule combien de ces voisine sont vive
 function info(nbligne, nbcolonne) {
-    let result=(0);
+    let result=0;
     if (grille.rows[i].cells[j].className == "vive") {
-        let result=(result-1);
+        let result=result-1
     } 
 
     for (let i = nbligne-1; i < nbligne+1; i++) {
@@ -15,7 +16,7 @@ function info(nbligne, nbcolonne) {
 
 }
 
-
+// fonction qui gère et aplique les règle de l'otomate
 function evolut(nbligne, nbcolonne) {
     for (let i = 0; i < nbligne; i++) {
         for (let j = 0; j < nbcolonne; j++) {
@@ -84,27 +85,6 @@ creerTableau(NBLIGNE, NBCOLONNE);
 let grille = document.getElementById("grille");
 
 
-function distance() {
-    let ligneresulta = loup.dataset.ligne - perso.dataset.ligne;
-    let colonneresulta = loup.dataset.colonne - perso.dataset.colonne;
-    if (ligneresulta < 0)
-        ligneresulta = "haut";
-    else if (ligneresulta > 0)
-        ligneresulta = "bas";
-    else
-        ligneresulta = "même ligne";
-
-    if (colonneresulta < 0)
-        colonneresulta = "gauche";
-    else if (colonneresulta > 0)
-        colonneresulta = "droite";
-    else
-        colonneresulta = "même colonne";
-
-    let resultat = ligneresulta + " " + colonneresulta;
-    return resultat;
-} 
-// naitre 3cel vive reste 2/3 cel viv
 /**
  * vrai si td vivente
  * @param {td} obj 
