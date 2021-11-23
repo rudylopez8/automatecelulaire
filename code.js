@@ -1,12 +1,12 @@
 function info(nbligne, nbcolonne) {
     let result=(0);
-    if (grille.rows[i].cells[j].className = "vive") {
+    if (grille.rows[i].cells[j].className == "vive") {
         let result=(result-1);
     } 
 
     for (let i = nbligne-1; i < nbligne+1; i++) {
         for (let j = nbcolonne-1; j < nbcolonne+1; j++) {
-            if (grille.rows[i].cells[j].className = "vive") {
+            if (grille.rows[i].cells[j].className == "vive") {
                 let result=(result+1);
             } 
         }
@@ -19,12 +19,12 @@ function info(nbligne, nbcolonne) {
 function evolut(nbligne, nbcolonne) {
     for (let i = 0; i < nbligne; i++) {
         for (let j = 0; j < nbcolonne; j++) {
-            if (grille.rows[i].cells[j].className = "vive") {
-                if (info(i,j)=2) {
+            if (grille.rows[i].cells[j].className == "vive") {
+                if (info(i,j)==2) {
                     td.className = "vive";
                     td.innerHTML = "<span class='sr-only'>vive</span>";
                 }    
-                if (info(i,j)=3) {
+                if (info(i,j)==3) {
                     td.className = "vive";
                     td.innerHTML = "<span class='sr-only'>vive</span>";
                 }    
@@ -33,7 +33,7 @@ function evolut(nbligne, nbcolonne) {
                         td.innerHTML = "<span class='sr-only'>morte</span>";    
                 }                
             } 
-            if (info(i,j)=3) {
+            if (info(i,j)==3) {
                 td.className = "vive";
                 td.innerHTML = "<span class='sr-only'>vive</span>";
             }    
