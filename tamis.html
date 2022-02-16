@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamis</title>
+</head>
+<style>
+    table,
+    td {
+        border: 1px solid #789;
+        padding: 5px;
+    }
+
+    td {
+        width: 2px;
+        height: 2px;
+    }
+
+    .vive {
+        background-color: #F00;
+    }
+
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        /* added line */
+        border: 0;
+    }
+</style>
+
+<body>
+    <div id="principale">
+        <label for="inputNp">nombre premier : </label><input type="number" id="inputNp" value="8" /><br>
+        <button onclick="calculer()">calculer</button>
+    </div>
+    <div id="resultat"></div>
+
+</body>
+<script>
+    function calculer() {
+
+        nbms = Date.now();
+        console.log(nbms);
+        let N = inputNp.value;
+        let pgnp = 2;
+        let cpt = 0;
+        let p = 2;
+let nbCalcul=0;
+
+        function estPremier(p) { //:boolean;
+            let result = 1;
+            for (let i = 2; i < p; i++) {
+                nbCalcul++;
+                if (p % i === 0) {
+                    return false
+                }
+            }
+            return true;
+        }
+
+        while (cpt < N) {
+            nbCalcul++;
+            if (estPremier(p))
+                cpt++;
+            pgnp = p;
+            p++;
+        }
+
+        nbms2 = Date.now();
+        let result = nbms2 - nbms;
+        //alert(result);
+        resultat.innerHTML+=pgnp+" calculer en "+result+"ms nombre "+nbCalcul+" calcul";
+        resultat.innerHTML+="<br>";
+
+    }
+</script>
+
+</html>
