@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grille</title>
+</head>
+<style>
+    table,
+    td {
+        border: 1px solid #789;
+        padding: 5px;
+    }
+
+    td {
+        width: 2px;
+        height: 2px;
+    }
+
+    .vive {
+        background-color: #F00;
+    }
+
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        /* added line */
+        border: 0;
+    }
+
+</style>
+
+<body>
+    <div id="principale">
+        <label for="inputNbLigne">nombre de lignes : </label><input type="number" id="inputNbLigne" value="32" onchange="changenb()" /><br>
+        <label for="inputNbColone">nombre de colones : </label><input type="number" id="inputNbColone" value="32" onchange="changenb()" /><br>
+        <label for="inputresolutionTemps">resolution temporelle en ms : </label><input type="number" id="inputresolutionTemps" value="1000" onchange="changeTemps()" /><br>
+
+        <button onclick="pause()">pause</button>
+        <button onclick="start()">start</button>
+        <button onclick="restart()">restart</button>
+
+    </div>
+    <div id="resultat"></div>
+
+</body>
+<script src="code2alea.js"></script>
+
+</html>
